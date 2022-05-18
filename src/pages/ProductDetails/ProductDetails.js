@@ -5,11 +5,9 @@ import { Button } from '@mui/material';
 import { Typography, Box, Modal } from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
 import { useDispatch, useSelector } from 'react-redux';
-import { SideBySideMagnifier, MOUSE_ACTIVATION } from 'react-image-magnifiers';
-import ReactImageMagnify from 'react-image-magnify'; 
 
 import axios from '../../apis/backendApi';
-import { removeSelectedProduct, fetchProduct, setLastSelectedProduct, buyNowProduct } from '../../redux/actions/product-actions';
+import { removeSelectedProduct, fetchProduct, buyNowProduct } from '../../redux/actions/product-actions';
 import { addProductToCart } from '../../redux/actions/cart-actions';
 
 import ProductCard from '../../components/PorductCard/ProductCard';
