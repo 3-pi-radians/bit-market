@@ -1,0 +1,133 @@
+.checkout {
+    width:96%;
+    min-height: 100vh;
+    margin: 0rem auto;
+    background-color: white;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.checkout--stepper>.MuiStepper-root>.MuiStep-root> .MuiStepLabel-root>span>svg {
+    font-size: 3rem;
+}
+.checkout--stepper>.MuiStepper-root>.MuiStep-root> .MuiStepLabel-root>span>span{
+    font-size: 1.4rem;
+}
+
+.checkout--choose-address {
+    background-color: #1976d2;
+    color: white;
+    height: 4rem;
+    width: 70%;
+    padding-top: 6px;
+    margin: 5rem auto;
+    text-align: center;
+    border-radius: 5px;
+}
+.checkout--address-list {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+.checkout--address-delivercard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.checkout--noaddress-msg {
+    font-size: 1.4rem;
+    width: 70%;
+    margin: 2rem auto;
+    text-align: center;
+    position: absolute;
+    left: 15%;
+    top: -3rem
+}
+.checkout--new-address {
+    background-color: transparent;
+    color: #A6ACAF;
+    height: 4rem;
+    width: 70%;
+    padding-top: 6px;
+    margin: 5rem auto;
+    text-align: center;
+    border-radius: 5px;
+    border: 3px dashed; 
+    cursor: pointer;
+}
+.checkout--new-address:hover {
+    color: #797D7F;
+}
+.checkout--address-save {
+    background-color: #E67E22;
+    height: 3.5rem;
+    width: 10rem;
+    color: white;
+    border-radius: 5px;;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+.checkout--address-save-selected {
+    background-color: #27AE60;
+}
+.checkout--nav-btns {
+    display: flex;
+    width: 70%;
+    margin: 5rem auto;
+    align-items: center;
+    justify-content: center;
+}
+.checkout-nav-button {
+    height: 3.5rem;
+    width: 10rem;
+    font-weight: 500;
+    color: white;
+    font-size: 1.4rem;
+    border-radius: 5px;
+}
+.checkout--payments-section   {
+    padding: 2rem;
+
+}  
+.checkout--payments-container > .ElementsApp {
+    display: inline;
+    height: 10rem;
+}
+.checkout--order-summary-container {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.checkout--payment-details-container {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.checkout--payments-title{
+     
+}
+.checkout--payment-method-container {
+    margin: 2rem;
+}
+.checkout--payment-method-container > input {
+    border: 1px solid rgb(0, 102, 244);
+    margin-left: 1rem;
+    border-radius: 5px;
+    height: 3rem;
+    padding: 0.5rem 2rem;
+}
+.checkout--card-payment-input {
+    width: 20rem;
+}
+.checkout--cvv-payment-input {
+    width: 9rem;
+}
+.demo-radio-buttons-group-label {
+    font-size: 1.6rem;
+}
+.checkout--payments-form {
+    color: #000;
+    background-color: red;
+}

@@ -1,0 +1,129 @@
+.profile {
+    width: 90%;
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+.profile-top-nav {
+    display: flex;
+    justify-content: space-around;
+}
+.profile--top-nav-items {
+    height: 6rem;
+    width: 100%;
+    border: 1px solid #F2F3F4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+.profile--top-nav-items:hover {
+   background-color: #F2F3F4;
+   border-bottom: 1px solid #F1C40F;
+   cursor: pointer;
+}
+.profile--nav-active {
+    background-color: #F2F3F4;
+    border-bottom: 2px solid #E67E22;
+}
+.profile--top-nav-text {
+    margin: 0.7rem;
+    font-size: 1.4rem;
+}
+.profile--address-card {
+    height: 22rem;
+    width: 26rem;
+    padding: 1.5rem;
+    margin: 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+}
+.profile--address-add {
+    text-align: center;
+    padding-top: 5rem;
+    border: 3px dashed #D7DBDD;
+
+}
+.profile--address-add:hover {
+    color: rgb(100,116, 139);
+}
+.profile--security {
+    padding: 2rem;
+}
+.profile--security-form {
+    border-bottom: 1px solid #D7DBDD;
+    padding: 1rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+}
+.profile--security-inputcontainer {
+    outline: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile--security-btn {
+    color: white;
+    border-radius: 5px;
+    outline: none;
+    height: 3rem;
+    width: 6rem;
+    font-weight: 600;
+}
+.profile--security-passwdcontainer {
+    outline: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile--security-formcontainer {
+    width: 100%;
+}
+.profile--addresscard-container {
+    width: 60%;
+}
+.profile--addresses-form {
+    margin: 2rem;
+    padding: 1rem;
+    width: 100%
+}
+.profile--addresses-form>form {
+    width: 100%;
+}
+.profile--adderss-forminput {
+    margin-bottom: -1rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.profile--address-list {
+    padding: 2rem;
+}
+.profile--address-btncontainer {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.profile--address-btn {
+    color: white;
+    border-radius: 7px;
+    outline: none;
+    height: 4rem;
+    width: 20rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+@media (max-width: 760px) {
+    .profile--security-inputcontainer {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+}

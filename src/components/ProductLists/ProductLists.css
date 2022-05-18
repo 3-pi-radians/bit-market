@@ -1,0 +1,18 @@
+.productlists {
+    background-color: #fff;
+    width: 96%;
+    margin: 0px auto;
+}
+
+.productlists--card-row-seperate {
+    height: 0.2rem;
+    background-color: #f1f3f6;
+    width: 100%;
+}
+.productlists--loader {
+    display: flex;
+    height: 25rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

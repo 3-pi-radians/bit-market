@@ -1,0 +1,33 @@
+.productcard {
+    width: 30rem;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40rem;
+}
+
+.productcard--imagecontainer {
+    margin-left: auto;
+    margin-right: auto; 
+    padding: 5px;
+}
+.productcard--image {
+    max-height: 300px;
+    width: 100%;
+}
+.productcard--image:hover {
+    transform: scale(1.1);
+    transition: all 100ms ease-in-out;
+}
+.productcard--text {
+    color: #1F618D;
+    font-weight: 600;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.6rem;
+}
+.productcard--text:hover {
+    color:#E74C3C;
+}

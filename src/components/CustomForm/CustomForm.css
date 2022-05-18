@@ -1,0 +1,67 @@
+.customform--body {
+  background-color: #f7f7f7;
+  width: 40rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #c5c5c5;
+  border-radius: 0.4rem;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.bodyForm_logo {
+    width: 120px;
+    object-fit: contain;
+    position: relative;
+    top: -50px;
+    left: calc(50% - 60px);
+    margin-bottom: 0px;
+  }
+.bodyForm > h3 {
+    margin-top: -20px;
+    text-align: center;
+    color: #201a1a;
+  }
+.bodyForm_formFields {
+    display: flex;
+    flex-direction: column;
+  }
+  .register__bodyForm_formFields > label {
+    display: flex;
+    align-items: center;
+    color: #2a2a2a;
+    font-weight: 600;
+  }
+  .register__bodyForm_formFields > label > .MuiSvgIcon-root {
+    font-size: 18px;
+    margin-right: 5px;
+  }
+  .register__bodyForm_formFields > input {
+    color: #000;
+    width: 90%;
+    outline: none;
+    height: 20px;
+    border: none;
+    margin-bottom: 10px;
+    border-bottom: 0.2px solid #2a2a2a;
+    padding: 4px;
+    background-color: #f7f7f7;
+  }
+  .register__bodyForm_button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    background-color: #2a2a2a;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 4px;
+  }
+  .register__bodyForm_button:hover {
+    background-color: #28b463;
+  }

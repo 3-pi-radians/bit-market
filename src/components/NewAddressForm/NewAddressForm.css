@@ -1,0 +1,44 @@
+.newaddressform--addresses-form {
+    margin: 2rem;
+    padding: 1rem;
+}
+.newaddressform--adderss-forminput {
+    margin-bottom: -1rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.newaddressform--address-list {
+    padding: 2rem;
+}
+.newaddressform--address-btncontainer {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.newaddressform--address-btn {
+    color: white;
+    border-radius: 7px;
+    outline: none;
+    height: 4rem;
+    width: 20rem;
+    font-weight: 600;
+    margin: 2rem 1rem 1rem 1rem;
+
+}
+@media (max-width: 760px) {
+    .newaddressform--adderss-forminput {
+        width: 100%;
+    }
+    .newaddressform--address-btncontainer {
+        width: 80%;
+    }
+    .newaddressform--address-btn {
+        color: white;
+        height: 3rem;
+        width: 15rem;
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin: 1rem;
+    }
+}

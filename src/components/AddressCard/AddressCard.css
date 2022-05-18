@@ -1,0 +1,13 @@
+.addresscard-details {
+    height: 22rem;
+    width: 25rem;
+    padding: 1.5rem;
+    border-radius: 5px;
+    border: 3px solid #D7DBDD;
+    padding-top: 2rem;
+    margin-left: auto;
+    margin-right: auto ;
+}
+.addresscard-newform-modal {
+    overflow-y: scroll;
+}
