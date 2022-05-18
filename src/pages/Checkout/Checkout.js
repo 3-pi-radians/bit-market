@@ -93,6 +93,7 @@ const Checkout = () => {
     const removeAllItems = async () => {
         if (BUYNOW) return true;
         try {
+            setIsProcessing(true);
             let response = await axios({
                 method: "post",
                 url: "/user/cart/empty-cart",
@@ -115,7 +116,6 @@ const Checkout = () => {
     }
     const nextCheckoutStep = () => {
         if (currentStep === 2) {
-            setIsProcessing(true);
             if ((paymentMethod === 'CARD' && cvv.length === 3 && cardNumber.length === 16)) {
                 const res = removeAllItems();
                 if (res) {
