@@ -62,6 +62,7 @@ const Header = () => {
 
   const triggerSearch = () => {
     navigate(`/search/${searchInput}`);
+    setSearchInput("");
   }
 
   const logoutUser = () => {

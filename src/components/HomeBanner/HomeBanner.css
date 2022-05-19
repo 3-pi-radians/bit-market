@@ -4,30 +4,23 @@
     align-items: center;
     margin-bottom: -100px;
     position:  relative;
-    z-index: -10;
 }
 
-.banner > .MuiSvgIcon-root {
+.banner>.MuiSvgIcon-root {
     position: absolute;
     top: 35%;
     font-size: 35px;
     cursor: pointer;
-    user-select: none;
-    z-index: 1;
 }
 .banner > .MuiSvgIcon-root:hover {
     color: white;
     background-color: rgba(0,0,0,0.5);
     transition: all 150ms ease-in;
-
 }
 .banner--image {
-
     object-fit: cover;
-
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0,0,0,0));
 }
-
 .banner--right-arrow {
     right: 8px;
 }

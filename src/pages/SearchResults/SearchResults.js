@@ -31,10 +31,10 @@ const SearchResults = () => {
                 {
                     matchedProducts.map(product => {
                         return (
-                            <>
-                                <SearchProductCard key={product.id} props={product}/>
+                            <React.Fragment key={product.id}>
+                                <SearchProductCard props={product}/>
                                 <hr/>
-                            </>
+                            </React.Fragment>
                         )
                         
                     })

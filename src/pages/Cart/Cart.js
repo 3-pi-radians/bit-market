@@ -188,7 +188,7 @@ const Cart = () => {
                                                 REMOVE
                                         </button>
                                     </div>
-                                    <div className=''>${(itemCount * price).toFixed(2)}</div>
+                                    <div className='font-bold mt-4 text-[#000] sm:text-lg md:text-xl lg:text-2xl'>${(itemCount * price).toFixed(2)}</div>
                                 </div>
                                 <div className='cart--left-item-divider'></div>
                                 </React.Fragment>

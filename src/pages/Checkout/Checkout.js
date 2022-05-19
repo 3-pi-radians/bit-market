@@ -206,7 +206,7 @@ const Checkout = () => {
                         const quantity=product.itemCount;
                         <hr/>
                         return (
-                            <React.Fragment  key={product.item.id}>
+                            <React.Fragment key={product.item.id}>
                                 <SearchProductCard props={product.item} quantity={quantity}/>
                                 <hr/>
                             </React.Fragment>
