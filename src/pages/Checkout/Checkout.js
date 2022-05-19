@@ -123,6 +123,11 @@ const Checkout = () => {
                     toast.success("Order Placed Successfully")   
                 }
             } else if (paymentMethod === 'UPI' && upi !== "") {
+                const upiregex=/[a-zA-Z0-9.\-_]@[a-zA-Z]/;
+                if (!upiregex.test(upi)) {
+                    toast.error("Enter valid UPI details!!")
+                    return;
+                }
                 const res = removeAllItems();
                 if (res) {
                     setCurrentStep(currentStep+1);

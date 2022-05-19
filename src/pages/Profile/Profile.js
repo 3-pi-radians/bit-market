@@ -32,7 +32,8 @@ const Profile = () => {
     const [editEmail, setEditEmail] = useState(false);
     const [editName, setEditName] = useState(false);
     const [editPhone, setEditPhone] = useState(false);
-    const [isProcessing, setIsProcessing] = useState(false);
+    const [isProcessing, setIsProcessing] = useState(false);    
+    const [passwordFormOpen, setPasswordFormOpen] = useState(false);
 
     const phoneRegExp = /^[6-9]{1}\d{9}$/
     const { user } = useSelector(state => state.user);
@@ -51,6 +52,21 @@ const Profile = () => {
         phone: Yup.string().matches(phoneRegExp, "Enter a valid Phone number")
                     .required("Phone number is Required")
     });
+
+    const passwordValidation = Yup.object({
+        passwd: Yup.string()
+            .max(15, "Password must be 6 to 15 Characters")
+            .min(6, "Password must be 6 to 15 Characters")
+            .required("Password is Required"),
+
+        newPasswd: Yup.string()
+        .max(15, "Password must be 6 to 15 Characters")
+        .min(6, "Password must be 6 to 15 Characters"),
+
+        confirmNewPasswd: Yup.string()
+            .oneOf([Yup.ref("newPasswd"), null], "Passwords must match")
+            .required("Required")
+    })
 
     useEffect(() => {
         if (!user?.isLoggedIn) {
@@ -99,6 +115,39 @@ const Profile = () => {
     const toggleNewAddressForm = (value) => {
         setAddressFormOpen(value);
     }
+
+    const changePassword = async(values) => {
+        try {
+            setIsProcessing(true);
+            let response = await axios({
+                method: "put",
+                url: "/user/modify-password",
+                data: {
+                    id: user.id,
+                    ...values
+                }
+            });
+
+            if (response.data.status === "ok") {
+                toast.success(response.data.message);
+                setIsProcessing(false);
+            } else {
+                toast.error(response.data.message);
+                setIsProcessing(false);
+            }
+            setIsProcessing(false);
+        } catch (error) {
+            console.log(error);
+            setIsProcessing(false);
+            toast.error(error.message);
+        }
+    }
+
+    const initialPasswordValues = {
+        passwd: "",
+        newPasswd: "",
+        confirmNewPasswd: ""
+    };
 
     return (
         <div className='profile bg-white'>
@@ -191,9 +240,53 @@ const Profile = () => {
                             <div className='profile--security-form'>
                               <div className='profile--security-passwdcontainer'>
                                   <div className='text-4xl font-medium m-4 pl-6'>2. Manage Passwords</div>
-                                  <div className='text-xl cursor-pointer font-medium text-[#2874f0] hover:text-[#2455f4]'>Change Password</div>
+                                  <div className='text-xl cursor-pointer font-medium text-[#2874f0] hover:text-[#2455f4]' onClick={() => setPasswordFormOpen(!passwordFormOpen)}>{!passwordFormOpen ? "Change Password" : "Cancel"}</div>
                               </div>
                             </div>
+                            {
+                                      passwordFormOpen && <div className='profile--changepasswd-container'>
+                                          {
+                                              <Formik initialValues={initialPasswordValues}  validationSchema={passwordValidation} validateOnMount>
+                                                  {
+                                                      formik => (
+                                                          <Form>
+                                                            <InputField  
+                                                                field_component={fieldComponents.INPUT}
+                                                                field_type={inputFieldTypes.BOXED} 
+                                                                name="passwd" 
+                                                                label="Current Password" type="password" 
+                                                                icon={<LockOpenIcon />}
+                                                            />
+                                                            <InputField  
+                                                                field_component={fieldComponents.INPUT}
+                                                                field_type={inputFieldTypes.BOXED} 
+                                                                name="newPasswd" 
+                                                                label="New Password" type="password" 
+                                                                icon={<LockOpenIcon />}
+                                                            />
+                                                            <InputField  
+                                                                field_component={fieldComponents.INPUT}
+                                                                field_type={inputFieldTypes.BOXED} 
+                                                                name="confirmNewPasswd" 
+                                                                label="Confirm New Password" type="password" 
+                                                                icon={<LockOpenIcon />}
+                                                            />
+                                                            <div className='profile--password-btncontainer'>
+                                                                <button type="button" 
+                                                                    className={`profile--password-chng-btn bg-[#28B463] ${!formik.isValid ? "cursor-not-allowed" : ""}`} 
+                                                                    disabled={!formik.isValid || isProcessing}
+                                                                    onClick={() => changePassword(formik.values)}>
+                                                                    Change Password
+                                                                </button>
+                                                            </div>
+
+                                                          </Form>
+                                                      )
+                                                  }
+                                              </Formik>
+                                          }
+                                      </div>
+                              }
                         </div>
                     )
                 }

@@ -119,6 +119,23 @@
     font-weight: 600;
     margin-top: 2rem;
 }
+.profile--changepasswd-container {
+    margin: 2rem 1rem;
+    padding: 2rem;
+}
+.profile--password-btncontainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.profile--password-chng-btn {
+    width: 20rem;
+    height: 4rem;
+    border-radius: 5px;
+    color: white;
+    outline: none;
+    font-size: 1.5rem;
+}
 @media (max-width: 760px) {
     .profile--security-inputcontainer {
         flex-direction: column;
