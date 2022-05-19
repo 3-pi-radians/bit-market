@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { Formik, Form } from "formik";
-import { v4 as uuidv4 } from 'uuid';
 import * as Yup from 'yup';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import SecurityIcon from '@mui/icons-material/Security';
@@ -131,6 +130,7 @@ const Profile = () => {
             if (response.data.status === "ok") {
                 toast.success(response.data.message);
                 setIsProcessing(false);
+                setPasswordFormOpen(false);
             } else {
                 toast.error(response.data.message);
                 setIsProcessing(false);

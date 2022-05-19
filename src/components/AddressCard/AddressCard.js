@@ -5,12 +5,15 @@ import { removeUserAddress } from '../../redux/actions/user-actions';
 import NewAddressForm from '../NewAddressForm/NewAddressForm';
 import axios from '../../apis/backendApi';
 import "./AddressCard.css";
+import { toast, ToastContainer } from 'react-toastify';
+import ProcessLoader from '../ProcessLoader/ProcessLoader';
 
 const AddressCard = ({props}) => {
     const { user } = useSelector(state => state.user);
     const dispatch = useDispatch();
     const [openNewAddressForm, setOpenNewAddressForm] = useState(false);
     const [openModal, setOpenModal] = useState(false);
+    const [isProcessing, setIsProcessing] = useState(false);
 
     const style = {
         position: 'absolute',
@@ -37,6 +40,7 @@ const AddressCard = ({props}) => {
     }
     const removeAddress = async () => {
         try {
+            setIsProcessing(true);
             let response = await axios({
                 method: "post",
                 url: "/user/remove-user-address",
@@ -46,12 +50,16 @@ const AddressCard = ({props}) => {
                 }
             });
             if (response.data.status === "ok") {
+                setIsProcessing(false);
                  dispatch(removeUserAddress(props.id));
+                 toast.success(response.data.message);
             } else if (response.data.status ===  "error") {
-                alert(response.data.message);
+                toast.error(response.data.message);
+                setIsProcessing(false);
             }
         } catch(error) {
-            console.log(error);
+            setIsProcessing(false);
+            console.log(error.message);
         }
     }
 
@@ -96,6 +104,8 @@ const AddressCard = ({props}) => {
                     </div>
                 </div>
             }
+            <ToastContainer/>
+            <ProcessLoader isProcessing={isProcessing} />
         </div>
     );
 }
